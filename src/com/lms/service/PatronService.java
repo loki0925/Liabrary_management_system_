@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import com.lms.Book;
 import com.lms.Patron;
 
-public class PatronService {
+public class PatronService implements IPatronService{
     private final Map<String, Patron> patronRegistry = new HashMap<>();
     private static final Logger logger = Logger.getLogger(PatronService.class.getName());
 

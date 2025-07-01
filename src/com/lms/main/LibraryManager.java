@@ -5,14 +5,22 @@ import java.util.List;
 import com.lms.Book;
 import com.lms.Patron;
 import com.lms.service.BookService;
+import com.lms.service.IBookService;
+import com.lms.service.ILendingService;
+import com.lms.service.IPatronService;
 import com.lms.service.LendingService;
 import com.lms.service.PatronService;
 
 public class LibraryManager {
-    private final BookService bookService;
-    private final PatronService patronService;
-    private final LendingService lendingService;
+	private final IBookService bookService;
+    private final IPatronService patronService;
+    private final ILendingService lendingService;
 
+    public LibraryManager(IBookService bookService, IPatronService patronService, ILendingService lendingService) {
+        this.bookService = bookService;
+        this.patronService = patronService;
+        this.lendingService = lendingService;
+    }
     public LibraryManager() {
         this.bookService = new BookService();
         this.patronService = new PatronService();

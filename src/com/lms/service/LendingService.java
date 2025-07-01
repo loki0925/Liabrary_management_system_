@@ -8,16 +8,16 @@ import com.lms.Book;
 import com.lms.LendingRecord;
 import com.lms.Patron;
 
-public class LendingService {
+public class LendingService implements ILendingService{
     private final List<LendingRecord> lendingRecords = new ArrayList<>();
-    private final BookService bookService;
-    private final PatronService patronService;
+    private final IBookService bookService;
+    private final IPatronService patronService;
 
     private static final Logger logger = Logger.getLogger(LendingService.class.getName());
 
-    public LendingService(BookService bookService, PatronService patronService) {
-        this.bookService = bookService;
-        this.patronService = patronService;
+    public LendingService(IBookService bookService2, IPatronService patronService2) {
+        this.bookService = bookService2;
+        this.patronService = patronService2;
     }
 
     // Checkout a book

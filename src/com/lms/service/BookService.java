@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 import com.lms.Book;
 
-public class BookService {
+public class BookService implements IBookService{
     private final Map<String, Book> bookInventory = new HashMap<>();
     private static final Logger logger = Logger.getLogger(BookService.class.getName());
 
